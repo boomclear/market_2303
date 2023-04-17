@@ -12,5 +12,14 @@ class Vendor
   def check_stock(item)
     @inventory[item]
   end
-  
+
+  def potential_revenue
+    revenue = 0
+    @inventory.each do |item, amount|
+      total_item =  item.price * amount
+      revenue += total_item
+    end
+    revenue
+  end
+
 end
